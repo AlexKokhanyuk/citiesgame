@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Cities Game</title>
+</head>
+<style>
+    body {
+        background: white
+    }
+    section {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%)
+    }
+</style>
+<body>
+<section>
+
+    <div th:switch="${city}">
+        <h2 th:case="null">No cities found!</h2>
+        <div th:case="*">
+            <h2 th:text="${message}"></h2>
+            <h3>
+                <form action="/next" method="get">
+                    <label for="prevcity">My word is:</label>
+                    <input type="text" th:field="${city.name}" id="prevcity" readonly>
+                    <p></p>
+                    <label for="word">Your word is...</label>
+                    <input type="text" value="" name="word" id="word" placeholder="Name">
+                    <p></p>
+                    <input type="submit" value="Next Word >>>">
+                </form><p></p>
+                <form action="/end" method="post">
+                    <input type="submit" value="End Game">
+                </form>
+            </h3>
+        </div>
+    </div>
+</section>
+</body>
+</html>

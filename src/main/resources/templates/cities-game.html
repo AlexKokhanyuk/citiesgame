@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:text-align="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Cities Game</title>
+</head>
+<style>
+    body {
+        background: white
+    }
+
+    section {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%)
+    }
+</style>
+<body>
+<section>
+    <h1 th:text="${hello}"></h1>
+    <h2 th:text="${welcome}"></h2>
+    <h2><a href="/begin">New Game >>></a></h2>
+</section>
+</body>
+</html>

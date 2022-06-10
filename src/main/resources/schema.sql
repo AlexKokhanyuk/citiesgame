@@ -1,0 +1,6 @@
+DROP TABLE IF EXISTS cities;
+CREATE TABLE cities
+(
+    id        BIGINT PRIMARY KEY AUTO_INCREMENT,
+    city_name VARCHAR(100) NOT NULL
+);
